@@ -1,2 +1,7 @@
 import Form from "./form";
-export default Form;
+import FormWithRef from "./formWithRef";
+
+export {
+    Form,
+    FormWithRef
+};

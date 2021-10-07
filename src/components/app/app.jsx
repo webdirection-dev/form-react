@@ -1,10 +1,12 @@
 import React from 'react';
-import Form from "../form";
+import {FormWithRef} from "../form";
+// import {Form} from "../form";
 import './app.css';
 
 function App() {
     return (
-        <Form />
+        <FormWithRef />
+        // <Form />
     );
 }
 
