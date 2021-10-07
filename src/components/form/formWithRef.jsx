@@ -31,13 +31,23 @@ export default class FormWithRef extends Component{
     }
 
     onChangeInput = (event) => {
+        const {creditCard, email, firstName, message, select, subscription, gender} = this.state;
+
         const {name, value} = event.target;
         let valueToState = value;
         if (name === 'email') valueToState = value.toLowerCase();
 
         // Если у setState 1й параметр фунция, то вторым параметром может быть колбэк
         this.setState(() => ({[name]: valueToState}), () => {
-            if (this.state.creditCard.length === 16) this.firstNameRef.current.focus();
+            if (
+                creditCard.length === 16 &&
+                email === '' &&
+                firstName === '' &&
+                message === '' &&
+                select === '' &&
+                !subscription &&
+                gender === '' 
+            ) this.firstNameRef.current.focus();
         });
 
         // this.setState({
